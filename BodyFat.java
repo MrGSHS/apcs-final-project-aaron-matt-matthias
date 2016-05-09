@@ -8,17 +8,17 @@ package project;
  *
  * @author amerlin7
  */
-public class BodyFat
+public class Calculations extends Profile
 {
     
-    public double calcBodyFatPercentMan (int weight, double waistSize)
+    public double bodyFatPercentMan (int weight, double waistSize)
     {
         double leanBodyWeight=94.42+1.082*weight-4.15*waistSize;
         double bodyFatPercent=125-leanBodyWeight*(100/weight);
         return bodyFatPercent;
     }
     
-    public double calcBodyFatPercentWomen (int weight, double wristDiameter, double forearmCircumference)
+    public double bodyFatPercentWomen (int weight, double wristDiameter, double forearmCircumference)
     {
         double wristDiameterCenti=wristDiameter/.394;
         double forearmCircumferenceCenti=forearmCircumference/.394;
@@ -28,6 +28,30 @@ public class BodyFat
         double bodyFatPercent=weightKilo-leanBodyWeight*(100/weightKilo);
         return bodyFatPercent;
     }
+    
+    public double caloriesBurnedRunning(int weight, double distance)
+    {
+        double caloriesBurned=weight*.63*distance;
+        return caloriesBurned;
+    }
+    
+    public double caloriesBurnedWalking(int weight, double distance, double time)
+    {
+        double speed=distance/time;
+        double caloriesBurned=0;
+        double timeMinutes=time*60
+        if(speed>5){
+            caloriesBurned=.029*weight*timeMinutes;
+        }
+        else{
+            caloriesBurned=.048*weight*timeMinutes;
+        }
+        return caloriesBurned;
+    }
+   public double caloriesBurnedBiking(int weight, double distance, double time)
+   {
+       double speed=distance/time
+   }
     public void main (String[] args){
         
         System.out.println(calcBodyFatPercentMan(125, 30));
