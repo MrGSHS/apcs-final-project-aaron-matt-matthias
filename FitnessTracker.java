@@ -3,15 +3,16 @@ import java.awt.event.*;
 import java.applet.Applet;
 import javax.swing.*;
 
-public class FitnessTracker extends Applet implements ActionListener, MouseListener
+public class FitnessTracker extends JPanel implements ActionListener, MouseListener
 {
     private int w, h;
     private int xCoord = -100;
     private int yCoord = -100;
     private int level;
     
-    public void init()
+    public FitnessTracker()
     {
+        setPreferredSize(new Dimension(1000, 800));
         setBackground(Color.WHITE);
         addMouseListener(this);
         level = 0;
@@ -80,16 +81,12 @@ public class FitnessTracker extends Applet implements ActionListener, MouseListe
 
     }
     
-    public void paint(Graphics g)
+    public void paintComponent(Graphics g)
     {
+        super.paintComponent(g);
+        
         // Calculates window width and height
         w = getWidth();
         h = getHeight();
-        
-        // Applet only runs when the window is 1000px by 800px
-        if(w == 1000 && h == 800)
-        {
-            
-        }
     }
 }
