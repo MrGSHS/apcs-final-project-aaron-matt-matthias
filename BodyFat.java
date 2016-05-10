@@ -8,7 +8,7 @@ package project;
  *
  * @author amerlin7
  */
-public class Calculations extends Profile
+public class BodyFat extends Profile
 {
     
     public double bodyFatPercentMan (int weight, double waistSize)
