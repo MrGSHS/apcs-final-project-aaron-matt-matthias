@@ -38,8 +38,8 @@ public class BodyFat extends Profile
     public double caloriesBurnedWalking(int weight, double distance, double time)
     {
         double speed=distance/time;
-        double caloriesBurned=0;
-        double timeMinutes=time*60
+        double caloriesBurned;
+        double timeMinutes=time*60;
         if(speed>5){
             caloriesBurned=.029*weight*timeMinutes;
         }
@@ -50,11 +50,14 @@ public class BodyFat extends Profile
     }
    public double caloriesBurnedBiking(int weight, double distance, double time)
    {
-       double speed=distance/time
+       double speed=distance/time;
+       double caloriesBurnedPerHour=(speed*weight*(.00000265)+.0083*(Math.pow(speed,3)* time)*7.2);
+       double caloriesBurned=caloriesBurnedPerHour*time;
+       return caloriesBurned;
    }
     public void main (String[] args){
         
-        System.out.println(calcBodyFatPercentMan(125, 30));
-        System.out.println(calcBodyFatPercentWomen(125, 2, 5));
+       // System.out.println(calcBodyFatPercentMan(125, 30));
+       // System.out.println(calcBodyFatPercentWomen(125, 2, 5));
     }
 }
