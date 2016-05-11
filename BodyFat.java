@@ -29,35 +29,109 @@ public class BodyFat extends Profile
         return bodyFatPercent;
     }
     
-    public double caloriesBurnedRunning(int weight, double distance)
-    {
-        double caloriesBurned=weight*.63*distance;
-        return caloriesBurned;
-    }
-    
-    public double caloriesBurnedWalking(int weight, double distance, double time)
+    public double caloriesBurnedRunning(double BMRHour, double distance, double time)
     {
         double speed=distance/time;
-        double caloriesBurned;
-        double timeMinutes=time*60;
-        if(speed>5){
-            caloriesBurned=.029*weight*timeMinutes;
+        double caloriesBurned=0;
+        if(speed>14){
+            caloriesBurned=BMRHour*23;
+        }
+        else if(speed>13){
+            caloriesBurned=BMRHour*19.8;
+        }
+        else if(speed>12){
+            caloriesBurned=BMRHour*19;
+        }
+        else if(speed>11){
+            caloriesBurned=BMRHour*16;
+        }
+        else if(speed>10){
+            caloriesBurned=BMRHour*14.5;
+        }
+        else if(speed>9){
+            caloriesBurned=BMRHour*12.8;
+        }
+        else if(speed>8){
+            caloriesBurned=BMRHour*11.8;
+        }
+        else if(speed>7){
+            caloriesBurned=BMRHour*11;
         }
         else{
-            caloriesBurned=.048*weight*timeMinutes;
+            caloriesBurned=BMRHour*9.8;
         }
-        return caloriesBurned;
+        return caloriesBurned*time;
     }
-   public double caloriesBurnedBiking(int weight, double distance, double time)
-   {
+    
+    public double caloriesBurnedWalking(double BMRHour, double distance, double time)
+    {
+       double caloriesBurned;
        double speed=distance/time;
-       double caloriesBurnedPerHour=(speed*weight*(.00000265)+.0083*(Math.pow(speed,3)* time)*7.2);
-       double caloriesBurned=caloriesBurnedPerHour*time;
-       return caloriesBurned;
+       if(speed>5){
+           caloriesBurned=BMRHour*8.3;
+       }
+       else if(speed>4.5){
+           caloriesBurned=BMRHour*7;
+       }
+       else if(speed>4){
+           caloriesBurned=BMRHour*5;
+       }
+       else if(speed>3.5){
+           caloriesBurned=BMRHour*4.3;
+       }
+       else if(speed>2.8){
+           caloriesBurned=BMRHour*3.5;
+       }
+       else if(speed>2.5){
+           caloriesBurned=BMRHour*3;
+       }
+       else{
+           caloriesBurned=BMRHour*2.8;
+       }
+       return caloriesBurned*time;
+       //double speed=distance/time;
+       //double caloriesBurned;
+       //double timeMinutes=time*60;
+       // if(speed>5){
+       //     caloriesBurned=.029*weight*timeMinutes;
+       // }
+       // else{
+       //     caloriesBurned=.048*weight*timeMinutes;
+       // }
+    }
+   public double caloriesBurnedBiking(int BMRHour, double distance, double time)
+   {
+       double caloriesBurned;
+       double speed=distance/time;
+       if(speed>20){
+           caloriesBurned=BMRHour*15.8;
+       }
+       else if(speed>16){
+           caloriesBurned=BMRHour*12;
+       }
+       else if(speed>14){
+           caloriesBurned=BMRHour*10;
+       }
+       else if(speed>12){
+           caloriesBurned=BMRHour*8;
+       }
+       else if(speed>10){
+           caloriesBurned=BMRHour*6.8;
+       }
+       else{
+           caloriesBurned=BMRHour*3.5;
+       }
+       //double caloriesBurnedPerHour=(speed*weight*(.00000265)+.0083*(Math.pow(speed,3)* time)*7.2);
+       //double caloriesBurned=caloriesBurnedPerHour*time;
+       return caloriesBurned*time;
    }
-    public void main (String[] args){
-        
-       // System.out.println(calcBodyFatPercentMan(125, 30));
-       // System.out.println(calcBodyFatPercentWomen(125, 2, 5));
+   
+   public double caloriesBurnedSwimming(int weight, double distance, double time)
+   {
+       double timeMinutes=time*60;
+       double weightKilo=weight*.453592;
+       double caloriesBurned=(timeMinutes*(6*3.5*weightKilo))/200;
+       return caloriesBurned;
+   
     }
 }
