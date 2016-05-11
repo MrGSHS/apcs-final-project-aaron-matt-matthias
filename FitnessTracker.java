@@ -6,14 +6,14 @@ import javax.swing.*;
 public class FitnessTracker extends JPanel implements ActionListener, MouseListener
 {
     private int w, h;
-    private int xCoord = -100;
-    private int yCoord = -100;
+    private int x = -100;
+    private int y = -100;
     private int level;
     
     public FitnessTracker()
     {
         setPreferredSize(new Dimension(1000, 800));
-        setBackground(Color.WHITE);
+        setBackground(ColorLibrary.lightGray());
         addMouseListener(this);
         level = 0;
         
@@ -34,12 +34,26 @@ public class FitnessTracker extends JPanel implements ActionListener, MouseListe
     public void mousePressed(MouseEvent me)
     {
         // Calculates cursor coordiates when pressed
-        xCoord = me.getX();
-        yCoord = me.getY();
+        x = me.getX();
+        y = me.getY();
         
         if(level == 0)
         {
+            // Checks to see if user presses "New Profile" button
+            if(x >= 300 && x <= 700 && y >= 400 && y <= 500)
+            {
+                level = 1;
+                x = -100;
+                y = -100;
+            }
             
+            // Checks to see if user presses "Choose Profile" button
+            if(x >= 300 && x <= 700 && y >= 550 && y <= 650)
+            {
+                level = 2;
+                x = -100;
+                y = -100;
+            }
         }
         else if(level == 1)
         {
@@ -88,5 +102,74 @@ public class FitnessTracker extends JPanel implements ActionListener, MouseListe
         // Calculates window width and height
         w = getWidth();
         h = getHeight();
+        
+        if(level == 0)
+        {
+            // Title text
+            g.setColor(Color.BLACK);
+            String title = "Fitness Tracker";
+            Font titleText = new Font("SansSerif", Font.BOLD, 100);
+            g.setFont(titleText);
+            FontMetrics titleMetrics = g.getFontMetrics();
+            int titleX = (1000 - titleMetrics.stringWidth(title)) / 2;
+            g.drawString(title, titleX, 200);
+            
+            // Font for new profile/choose profile button text
+            Font buttonText = new Font("SansSerif", Font.PLAIN, 50);
+            g.setFont(buttonText);
+            FontMetrics buttonMetrics = g.getFontMetrics();
+            
+            // New profile button
+            g.setColor(ColorLibrary.lightBlue());
+            g.fillRect(300, 400, 400, 100);
+            
+            // New profile button text
+            g.setColor(Color.BLACK);
+            String newProfile = "New Profile";
+            int newProfileX = (1000 - buttonMetrics.stringWidth(newProfile)) / 2;
+            g.drawString(newProfile, newProfileX, 470);
+            
+            // Choose profile button
+            g.setColor(ColorLibrary.lightBlue());
+            g.fillRect(300, 550, 400, 100);
+            
+            // Choose profile button text
+            g.setColor(Color.BLACK);
+            String chooseProfile = "Choose Profile";
+            g.setFont(buttonText);
+            int chooseProfileX = (1000 - buttonMetrics.stringWidth(chooseProfile)) / 2;
+            g.drawString(chooseProfile, chooseProfileX, 620);
+            
+            // Creator text
+            g.setColor(Color.BLACK);
+            String creators = "Created by Aaron, Matt, Steven, and Matthias";
+            Font creatorText = new Font("SansSerif", Font.PLAIN, 20);
+            g.setFont(creatorText);
+            FontMetrics creatorMetrics = g.getFontMetrics();
+            int creatorsX = (1000 - creatorMetrics.stringWidth(creators)) / 2;
+            g.drawString(creators, creatorsX, 750);
+            
+            // Creator text (date)
+            String date = "@2016";
+            FontMetrics dateMetrics = g.getFontMetrics();
+            int dateX = (1000 - dateMetrics.stringWidth(date)) / 2;
+            g.drawString(date, dateX, 775);
+        }
+        else if(level == 1)
+        {
+            
+        }
+        else if(level == 2)
+        {
+            
+        }
+        else if(level == 3)
+        {
+            
+        }
+        else if(level == 4)
+        {
+            
+        }
     }
 }
