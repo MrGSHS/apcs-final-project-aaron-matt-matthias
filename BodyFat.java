@@ -126,12 +126,47 @@ public class BodyFat extends Profile
        return caloriesBurned*time;
    }
    
-   public double caloriesBurnedSwimming(int weight, double distance, double time)
+   public double caloriesBurnedSwimming(double BMRHour, double distance, double time)
    {
-       double timeMinutes=time*60;
-       double weightKilo=weight*.453592;
-       double caloriesBurned=(timeMinutes*(6*3.5*weightKilo))/200;
-       return caloriesBurned;
-   
+       double caloriesBurned; 
+       double speed=distance/time;
+       if(speed>2.5){
+           caloriesBurned=BMRHour*10;
+       }
+       else if(speed>1.7){
+           caloriesBurned=BMRHour*8.3;
+       }
+       else{
+           caloriesBurned=BMRHour*6;
+       }
+       //double timeMinutes=time*60;
+       //double weightKilo=weight*.453592;
+       //double caloriesBurned=(timeMinutes*(6*3.5*weightKilo))/200;
+       return caloriesBurned*time;   
     }
+   public double caloriesBurnedSkiing(double BMRHour, double time){
+       double caloriesBurned=BMRHour*7; 
+       return caloriesBurned*time;
+   }
+   public double caloriesBurnedSoccer(double BMRHour, double time){
+       double caloriesBurned=BMRHour*7;
+       return caloriesBurned*time;
+   }
+   public double caloriesBurnedTennis(double BMRHour, double time){
+       double caloriesBurned=BMRHour*7.3;
+       return caloriesBurned*time;
+   }
+   public double caloriesBurnedBasketball(double BMRHour, double time){
+       double caloriesBurned=BMRHour*8;
+       return caloriesBurned*time;
+   }
+   public double caloriesBurnedFootball(double BMRHour, double time){
+       double caloriesBurned=BMRHour*8;
+       return caloriesBurned*time;
+   }
+   public double caloriesBurnedVolleyball(double BMRHour, double time){
+       double caloriesBurned=BMRHour*4;
+       return caloriesBurned*time;
+   }
+   
 }
