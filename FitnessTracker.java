@@ -162,7 +162,7 @@ public class FitnessTracker extends JPanel implements ActionListener, MouseListe
 
             // Creator text
             g.setColor(Color.BLACK);
-            String creators = "Created by Aaron, Matt, Steven, and Matthias";
+            String creators = "Created by A-A ron, Matt, Steven, and Matthias";
             Font creatorText = new Font("SansSerif", Font.PLAIN, 20);
             g.setFont(creatorText);
             FontMetrics creatorMetrics = g.getFontMetrics();
