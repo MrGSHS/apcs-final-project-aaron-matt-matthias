@@ -41,9 +41,27 @@ public class Profile
         return result;
     }
     
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
     public String getName()
     {
         return name;
+    }
+    
+    
+    public void setName(boolean isMale)
+    {
+        if(isMale == true)
+        {
+            gender = "Male";
+        }
+        else
+        {
+            gender = "Female";
+        }
     }
     
     public String getGender()
@@ -51,9 +69,21 @@ public class Profile
         return gender;
     }
     
+    
+    public void setAge(int age)
+    {
+        this.age = age;
+    }
+    
     public int getAge()
     {
         return age;
+    }
+    
+    
+    public void setHeight(int height)
+    {
+        this.height = height;
     }
     
     public int getHeight()
@@ -61,6 +91,12 @@ public class Profile
         // return height all in inches for calculations
         // return height in feet and inches for display
         return height;
+    }
+    
+    
+    public void setWeight(int weight)
+    {
+        this.weight = weight;
     }
     
     public int getWeight()
