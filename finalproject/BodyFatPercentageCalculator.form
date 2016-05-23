@@ -185,7 +185,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel7">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Wrist Circumference (in)"/>
+            <Property name="text" type="java.lang.String" value="Waist Circumference (in)"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
