@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=feet\ inches\ weight
+comment0.target=double\ CalculateBmi(int,\ int,\ int)
+numComments=1

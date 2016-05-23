@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=weight\ waistSize
+comment0.target=double\ bodyFatPercentMan(int,\ double)
+comment1.params=weight\ waistSize
+comment1.target=double\ bodyFatPercentWomen(int,\ double)
+numComments=2

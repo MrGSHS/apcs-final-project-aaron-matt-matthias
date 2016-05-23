@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.params=BMRHour\ distance\ time
+comment0.target=double\ caloriesBurnedRunning(double,\ double,\ double)
+comment1.params=BMRHour\ distance\ time
+comment1.target=double\ caloriesBurnedWalking(double,\ double,\ double)
+comment2.params=BMRHour\ distance\ time
+comment2.target=double\ caloriesBurnedBiking(int,\ double,\ double)
+comment3.params=BMRHour\ distance\ time
+comment3.target=double\ caloriesBurnedSwimming(double,\ double,\ double)
+comment4.params=BMRHour\ time
+comment4.target=double\ caloriesBurnedSkiing(double,\ double)
+comment5.params=BMRHour\ time
+comment5.target=double\ caloriesBurnedSoccer(double,\ double)
+comment6.params=BMRHour\ time
+comment6.target=double\ caloriesBurnedTennis(double,\ double)
+comment7.params=BMRHour\ time
+comment7.target=double\ caloriesBurnedBasketball(double,\ double)
+comment8.params=BMRHour\ time
+comment8.target=double\ caloriesBurnedFootball(double,\ double)
+comment9.params=BMRHour\ time
+comment9.target=double\ caloriesBurnedVolleyball(double,\ double)
+numComments=10

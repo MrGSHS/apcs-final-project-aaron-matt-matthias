@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=age\ feet\ inches\ weight
+comment0.target=double\ calculateBMRman(int,\ int,\ int,\ int)
+comment1.params=age\ feet\ inches\ weight
+comment1.target=double\ calculateBMRwoman(int,\ int,\ int,\ int)
+comment2.params=bmr
+comment2.target=double\ bmrHour(double)
+numComments=3
