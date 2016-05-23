@@ -1,3 +1,5 @@
+package finalproject;
+
 
 /**
  * Write a description of class BMI here.
@@ -8,7 +10,7 @@
 public class BMI
 {
     //calculate your body mass index
-    public double bmi(int feet, int inches, int weight)
+    public double CalculateBmi(int feet, int inches, int weight)
     {
         //converts height and weight to metric
         double kg = weight*0.45;

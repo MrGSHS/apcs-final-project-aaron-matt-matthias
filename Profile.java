@@ -1,7 +1,10 @@
+package finalproject;
+
 public class Profile
 {
     private String name;
     private String gender;
+    private boolean isMale;
     private int age;
     private int height;
     private int feet;
@@ -21,6 +24,7 @@ public class Profile
             gender = "Female";
         }
         
+        this.isMale = isMale;
         this.age = age;
         height = feet * 12 + inches;
         this.feet = feet;
@@ -41,27 +45,29 @@ public class Profile
         return result;
     }
     
-    public void setName(String name)
+    public double calculateBMI()
     {
-        this.name = name;
+        //converts height and weight to metric
+        double kg = weight*0.45;
+        double meters = height*0.025;
+        double constant = meters * meters;
+        double bmi = kg/constant;
+        return bmi;
     }
+    
+    public double calculateBMR()
+    {
+        if(isMale)
+            return BMR.calculateBMRman(age, feet, inches, weight);
+        else
+            return BMR.calculateBMRwoman(age, feet, inches, weight);
+    }
+    
+
     
     public String getName()
     {
         return name;
-    }
-    
-    
-    public void setName(boolean isMale)
-    {
-        if(isMale == true)
-        {
-            gender = "Male";
-        }
-        else
-        {
-            gender = "Female";
-        }
     }
     
     public String getGender()
@@ -69,10 +75,9 @@ public class Profile
         return gender;
     }
     
-    
-    public void setAge(int age)
+    public boolean getIsMale()
     {
-        this.age = age;
+        return isMale;
     }
     
     public int getAge()
@@ -80,23 +85,11 @@ public class Profile
         return age;
     }
     
-    
-    public void setHeight(int height)
-    {
-        this.height = height;
-    }
-    
     public int getHeight()
     {
         // return height all in inches for calculations
         // return height in feet and inches for display
         return height;
-    }
-    
-    
-    public void setWeight(int weight)
-    {
-        this.weight = weight;
     }
     
     public int getWeight()
