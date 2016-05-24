@@ -50,7 +50,7 @@ public class ActivitiesCaloriesBurned extends javax.swing.JPanel implements Swit
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Calories Burned");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Running", "Walking", "Swimming", "Skiing", "Tennis", "Soccer", "Backetball", "Volleyball", "Football" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Running", "Walking", "Swimming", "Skiing", "Tennis", "Soccer", "Basketball", "Volleyball", "Football", "Programming" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -270,7 +270,7 @@ public class ActivitiesCaloriesBurned extends javax.swing.JPanel implements Swit
                 case "Soccer":
                     result = CaloriesBurned.caloriesBurnedSoccer(BMRHour, Double.parseDouble(jTextField2.getText()));
                     break;
-                case "Backetball":
+                case "Basketball":
                     result = CaloriesBurned.caloriesBurnedBasketball(BMRHour, Double.parseDouble(jTextField2.getText()));
                     break;
                 case "Volleyball":
@@ -279,6 +279,8 @@ public class ActivitiesCaloriesBurned extends javax.swing.JPanel implements Swit
                 case "Football":
                     result = CaloriesBurned.caloriesBurnedFootball(BMRHour, Double.parseDouble(jTextField2.getText()));
                     break;
+                case "Programming":
+                        result= CaloriesBurned.caloriesBurnedCoding(BMRHour, Double.parseDouble(jTextField2.getText()));
                 default:
                     break;
             }

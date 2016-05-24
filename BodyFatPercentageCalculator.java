@@ -146,7 +146,7 @@ public class BodyFatPercentageCalculator extends javax.swing.JPanel implements S
             }
         });
 
-        jLabel7.setText("Wrist Circumference (in)");
+        jLabel7.setText("Waist Circumference (in)");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Women");

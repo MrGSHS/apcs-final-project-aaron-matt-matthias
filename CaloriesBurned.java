@@ -132,5 +132,10 @@ public class CaloriesBurned {
         double caloriesBurned = BMRHour * 4;
         return caloriesBurned * time;
     }
+    
+    public static double caloriesBurnedCoding(double BMRHour, double time) {
+        double caloriesBurned = BMRHour * 1.58;
+        return caloriesBurned * time;
+    }
 
 }
